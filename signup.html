@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank</title>
+
+    <!-- vendor stylesheets-->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="aos/aos.css" >
+    <link rel="stylesheet" href="icofont/icofont.min.css">
+
+    <!--Document stylesheet-->
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body class="container-fluid">
+
+<div class="row justify-content-center">
+    <img src="images/image1.jpg" class="img-fluid d-flex w-100 img-thumbnail" style="max-height: 15cm;">
+</div>
+
+<div class="row card bg-dark text-white">
+<form class="form container mt-4 mb-4" style="border:red 1px solid; border-radius:10px">
+    <div class="form-row justify-content-center">
+        <h2 class="header" style="color:rgb(252, 5, 79);">DONOR REGISTRATION</h2>
+    </div>
+    <div class="form-row justify-content-around">
+        <div class="form-group">
+            <label for="username" class=""><strong>Your Name</strong></label>
+            <input class="form-control" type="text" aria-describedby="userHelp" name="username" id="username" required>
+            <small id="userHelp" class="form-text form-text-muted"><i class="icofont-info " style="border:solid 1px red;border-radius:100%"></i> Username cannot consist of numbers or special characters</small>
+        </div>
+
+        <div class="form-group">
+            <label for="userage" class=""><strong>Your Age</strong></label>
+            <input class="form-control" type="number" aria-describedby="ageHelp" name="userage" id="userage" maxlength="2" min="12" max="66" required>
+            <small id="ageHelp" class="form-text form-text-muted"><i class="icofont-info " style="border:solid 1px red;border-radius:100%"></i> Age must be between 12 and 66 years </small>
+       
+        </div>
+
+        <div class="form-group">
+            <label for="userphone" class=""><strong>Phone Number</strong></label>
+            <input class="form-control" type="number" aria-describedby="phoneHelp" name="userphone" id="userphone" min="10000000" maxlength="10" required>
+        <small id="phoneHelp" class="form-text form-text-muted"><i class="icofont-info " style="border:solid 1px red;border-radius:100%"></i> Phone number can consist of up to 10 numbers and cannot be negative</small>
+        </div>
+    </div>
+
+    <div class="form-row justify-content-around">
+        <div class="form-group">
+            <label for="userblood" class=""><strong>Blood Group</strong></label>
+            <select class="form-control" aria-describedby="bloodHelp" type="text" name="userblood" id="userblood" required>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>O+</option>
+                <option>O-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                </select>
+                <small id="bloodHelp" class="form-text form-text-muted"><i class="icofont-info " style="border:solid 1px red;border-radius:100%"></i> choose a valid blood group to help connect donors and receivers </small>
+               
+        </div>
+
+        <div class="form-group">
+            <label for="useremail" class="text-bold"><strong>Email Address</strong></label>
+            <input class="form-control" aria-describedby="emailHelp" type="email" name="useremail" id="usermail" required>
+            <small id="emailHelp" class="form-text form-text-muted"><i class="icofont-info " style="border:solid 1px red;border-radius:100%"></i> Input a valid email address. We will send a verification code</small>
+       
+        </div>
+
+        <div class="form-group">
+            <label for="userpassword" class=""><strong>Password</strong></label>
+            <input class="form-control" aria-describedby="passHelp" type="password" name="userpassword" id="userpassword" maxlength="16" minlength="6" required>
+            <small id="passHelp" class="form-text form-text-muted"><i class="icofont-info " style="border:solid 1px red;border-radius:100%"></i> Password must be between 6 and 16 characters</small>
+       
+        </div>
+    </div>
+
+    <div class="form-row">
+        <button type="submit" class="form-control btn btn-danger m-4" role="button"><strong>Register</strong></button>
+    </div>
+</form>
+</div>
+
+
+    <footer class="footer">
+        <div class="row">
+            <div class="col-md-4 p-4">
+<h2 class="header">Quick Links</h2>
+<ul style="list-style:none;">
+    <li ><a href="#"><span class="icofont-user icofont-2x" style="color: red;"></span>Sign Up</a></li>
+    <li ><a href="login.html"><span class="icofont-sign-in icofont-2x" style="color: red;"></span>Log In</a></li>
+    <li ><a href="#"><span class="icofont-lock icofont-2x" style="color: red;"></span>Terms and Conditions</a></li>
+    <li ><a href="#"><span class="icofont-key icofont-2x" style="color: red;"></span>Privacy Policy</a></li>
+   
+</ul>
+            </div>
+            <div class="col-md-4 p-4">
+                <h2 class="header">Contact Us</h2>
+                
+<ul style="list-style:none;">
+    <li class="m-2"><a href="#"><span class="icofont-phone icofont-2x " style="color: red;"></span><strong>0716566467</strong></a></li>
+    <li><a href="#"><span class="icofont-chat icofont-2x "style="color: red;"></span>Sms <strong>0716566467</strong></a></li>
+    <li><a href="#"><span class="icofont-whatsapp icofont-2x" style="color: red;"></span>Whatsapp <strong>0712345678</strong></a></li>
+    <li><a href="#"><span class="icofont-email icofont-2x" style="color: red;"></span>Email <strong>thisisasample@domain.com</strong></a></li>
+</ul>
+            </div>
+
+            <div class="col-md-4 p-4">
+                <h2 class="header">Our Addresses</h2>
+                <a href="#"><strong><span class="icofont-google-map icofont-2x" style="color: red;"></span>Sample Sample</strong></a>
+                <br>
+                <a href="#"><strong><span class="icofont-map icofont-2x" style="color: red;"></span>P.O.BOx ABC</strong></a>
+                
+                <br>
+                <a href="#"><strong><span class="icofont-flag icofont-2x" style="color: red;"></span>Kisii University, Kenya</strong></a>
+                 
+            </div>
+        </div>
+        <div class="row bg-dark text-center align-content-center" style="text-align: center;">
+<p class="text-white text-center" >&copy;Cloudbased Blood Bank 2021</p>
+        </div>
+    </footer>
+     
+    <!--Vendor Scripts-->
+    
+     <script src ="jquery/jquery.min.js"></script>
+     <script src="bootstrap/js/bootstrap.js"></script>
+     <script src="aos/aos.js"></script>
+     <script src="jquery.easing/jquery.easing.min.js"></script>
+
+     <!--Document Scripts-->
+     <script src="js/main.js"></script>
+
+     <script>
+        AOS.init({
+            disable:false,
+            startEvent:'DOMContentLoaded',
+            initClassName:'aos-init',
+            animatedClassName:'aos-animate',
+            useClassNames:false,
+            disableMutationObserver:false,
+            debounceDelay:50,
+            throttleDelay:99,
+            offset:120,
+            delay:0,
+            durations:400
+
+        });
+    </script>   
+</body>
