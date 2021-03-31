@@ -1,3 +1,16 @@
 .nav-item{
     list-style: disc;
 }
+
+.text-red{
+    color: red;
+}
+
+.icofont-close{
+    border: solid 1px;
+    border-radius: 100%;
+}
+
+#form-status{
+    display: none;
+}

@@ -9,6 +9,7 @@
     <!-- vendor stylesheets-->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" media="screen">
     <link rel="stylesheet" href="aos/aos.css" >
+    <link rel="stylesheet" href="icofont/icofont.min.css">
 
     <!--Document stylesheet-->
     <link rel="stylesheet" href="css/main.css">
@@ -92,10 +93,17 @@
 <section class="form-section">
    <div class="row container justify-content-center">
        <div class="col-md-6 mb-5" data-aos="zoom-in">
-           <form class="form text-center container btn btn-outline-danger" onmouseover="noBackGround(this);">
+           <form class="form text-center container btn btn-outline-danger" method="POST" action="Search.php" onsubmit="return isValidSearchForm()" onmouseover="noBackGround(this);">
                <h2 class="header m-5">Search Blood</h2>
+               <div class="progress" id="progressBar" style="display: none;">
+                   <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 100%;" aria-valuemin="0" aria-valuenow="100" aria-valuemax="100"></div>
+               </div>
+
+               <div id="searchResult" style="display: none;" class="text-style-bold">
+                   <h2 class="page-header" id="resultText">results will appear here</h2>
+               </div>
              <div class="form-group m-5">
-                 <select class="form-control" placeholder="Select BloodGroup" name="group">
+                 <select class="form-control" aria-describedby="bloodHelp" id="group" oninput="validateGroup(this)" placeholder="Select BloodGroup" name="group">
                     <option>Search Blood Group</option>
                     <option>A+</option>
                     <option>A-</option>
@@ -106,8 +114,10 @@
                     <option>AB+</option>
                     <option>AB-</option>
                  </select>
+                 <small id="bloodHelp" style="color: red;" class="form-text form-text-muted"><i class="icofont-info " style="border:solid 1px red;border-radius:100%"></i> choose a valid blood group to search </small>
+
              </div> 
-             <button class="btn btn-danger mb-5" role="button" type="submit" >Search</button>
+             <button class="btn btn-danger mb-5" role="button" onclick="searchForBlood();" type="button" >Search</button>
            </form>
        </div>
        
@@ -124,19 +134,19 @@
     <div class="collapse navbar-collapse justify-content-center" id="navBarContent">
         <div class="navbar-nav mr-auto" style="list-style: none;">
         
-                <a class="nav-link btn btn-outline-danger text-white" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link btn btn-outline-danger text-white" href="index.html">Home <span class="sr-only">(current)</span></a>
             
                 <a class="nav-link btn btn-danger m-2 text-white" href="signup.html">Sign Up</a>
             
-                <a class="nav-link btn btn-danger m-2 text-white" href="#">Send Request</a>
+                <a class="nav-link btn btn-danger m-2 text-white" href="send_request.html">Send Request</a>
             
-                <a class="nav-link btn btn-danger m-2 text-white" href="#">View Request</a>
+                <a class="nav-link btn btn-danger m-2 text-white" href="view_request.html">View Request</a>
             
                 <a class="nav-link btn btn-danger m-2 text-white" href="search.html">Search</a>
             
                 <a class="nav-link btn btn-danger m-2 text-white" href="#">Contact Us</a>
             
-                <a class="nav-link btn btn-danger m-2 text-white" href="#">Log In</a>
+                <a class="nav-link btn btn-danger m-2 text-white" href="login.html">Log In</a>
             
         </div>
     </div>
@@ -148,10 +158,10 @@
             <div class="col-md-4">
 <h2 class="header">Quick Links</h2>
 <ul style="list-style:none;">
-    <li ><a href="#">Sign Up</a></li>
-    <li ><a href="#">Log In</a></li>
-    <li ><a href="#">Terms and Conditions</a></li>
-    <li ><a href="#">Privacy Policy</a></li>
+    <li ><a href="signup.html"><span class="icofont-user icofont-2x" style="color: red;"></span>Sign Up</a></li>
+    <li ><a href="login.html"><span class="icofont-sign-in icofont-2x" style="color: red;"></span>Log In</a></li>
+    <li ><a href="#"><span class="icofont-lock icofont-2x" style="color: red;"></span>Terms and Conditions</a></li>
+    <li ><a href="#"><span class="icofont-key icofont-2x" style="color: red;"></span>Privacy Policy</a></li>
    
 </ul>
             </div>
@@ -159,20 +169,22 @@
                 <h2 class="header">Contact Us</h2>
                 
 <ul style="list-style:none;">
-    <li><a href="#">Call <strong>0716566467</strong></a></li>
-    <li><a href="#">Sms <strong>0716566467</strong></a></li>
-    <li><a href="#">Whatsapp <strong>0712345678</strong></a></li>
-    <li><a href="#">Email <strong>thisisasample@domain.com</strong></a></li>
+    <li class="m-2"><a href="#"><span class="icofont-phone icofont-2x " style="color: red;"></span><strong>0716566467</strong></a></li>
+    <li><a href="#"><span class="icofont-chat icofont-2x "style="color: red;"></span>Sms <strong>0716566467</strong></a></li>
+    <li><a href="#"><span class="icofont-whatsapp icofont-2x" style="color: red;"></span>Whatsapp <strong>0712345678</strong></a></li>
+    <li><a href="#"><span class="icofont-email icofont-2x" style="color: red;"></span>Email <strong>thisisasample@domain.com</strong></a></li>
 </ul>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 p-4">
                 <h2 class="header">Our Addresses</h2>
-                <address>Sample Sample</address>
+                <a href="#"><strong><span class="icofont-google-map icofont-2x" style="color: red;"></span>Sample Sample</strong></a>
                 <br>
-                <b>P.O.Box Kisii</b>
+                <a href="#"><strong><span class="icofont-map icofont-2x" style="color: red;"></span>P.O.BOx ABC</strong></a>
+                
                 <br>
-                <strong>University Road, Kenya</strong>
+                <a href="#"><strong><span class="icofont-flag icofont-2x" style="color: red;"></span>Kisii University, Kenya</strong></a>
+                 
             </div>
         </div>
         <div class="row bg-dark text-center align-content-center" style="text-align: center;">

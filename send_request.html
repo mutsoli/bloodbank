@@ -121,17 +121,20 @@
 <section class="form-section">
     <div class="row justify-content-center bg-dark-light">
         <div class="col-md-6">
-        <form class="form m-5 p-5 container" style="border: red 1px solid;border-radius: 10px;">
-            <h2 class="text-red  text-center">Blood Request</h2>
+        <form class="form m-5 p-5 container" method="POST" action="send_blood_request.php" onsubmit="return isValidRequestForm()" style="border: red 1px solid;border-radius: 10px;">
+            <h2 class="text-center">Blood Request</h2>
+            <h3 class="text-red text center" id="form-status">
+                <span class="icofont-close"></span>One or more inputs are invalid</h3>
             <br>
             <div class="form-group">
                 <label for="username">Your Name</label>
-                <input class="form-control" type="text" id="username" name="username">
+                <input class="form-control" oninput="validateName(this);" type="text" id="username" aria-describedby="userHelp" name="username">
+                <small id="userHelp" style="color: red;" class="form-text form-text-muted"><i class="icofont-info " style="border:solid 1px red;border-radius:100%"></i> Username cannot consist of numbers or special characters</small>
             </div> 
 
             <div class="form-group">
                 <label for="bloodgroup">BloodGroup</label>
-                <select class="form-control"  id="bloodgroup" name="bloodgroup">
+                <select class="form-control" aria-describedby="bloodHelp" oninput="validateGroup(this)"  id="bloodgroup" name="bloodgroup">
                     <option>Select Blood Group</option>
                     <option>A+</option>
                     <option>A-</option>
@@ -142,6 +145,8 @@
                     <option>AB+</option>
                     <option>AB-</option>
                 </select>
+                <small id="bloodHelp" style="color: red;" class="form-text form-text-muted"><i class="icofont-info " style="border:solid 1px red;border-radius:100%"></i> choose a valid blood group to help connect donors and receivers </small>
+
             </div>
 
             <div class="form-group">
@@ -151,12 +156,16 @@
 
             <div class="form-group">
                 <label for="phone">Mobile Number</label>
-                <input class="form-control" type="tel" id="phone" name="phone">
+                <input class="form-control" type="tel" oninput="validatePhone(this)" id="phone" aria-describedby="phoneHelp" name="phone">
+                <small id="phoneHelp" style="color: red;" class="form-text form-text-muted"><i class="icofont-info " style="border:solid 1px red;border-radius:100%"></i> Phone number can consist of up to 10 numbers and cannot be negative</small>
+       
             </div>
             
             <div class="form-group">
                 <label for="email">Your Email</label>
-                <input class="form-control" type="email" id="email" name="email">
+                <input class="form-control" type="email" aria-describedby="emailHelp" oninput="validateEmail(this)" id="email" name="email">
+                <small id="emailHelp" style="color: red;" class="form-text form-text-muted"><i class="icofont-info " style="border:solid 1px red;border-radius:100%"></i> Input a valid email address. We will send a verification code</small>
+       
             </div> 
 
             <div class="form-group text-center">

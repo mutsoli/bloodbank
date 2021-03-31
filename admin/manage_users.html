@@ -7,21 +7,20 @@
     <title>Blood Bank</title>
 
     <!-- vendor stylesheets-->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" media="screen">
-    <link rel="stylesheet" href="aos/aos.css" >
-    <link rel="stylesheet" href="icofont/icofont.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="../aos/aos.css" >
+    <link rel="stylesheet" href="../icofont/icofont.min.css">
 
     <!--Document stylesheet-->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 
 </head>
-<body class="container-fluid" onload="fetchRequests();" >
-   
+<body class="container-fluid" onload="fetchUsers();">
 <!--Navigation Menu-->
 
 <header class="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="min-height: 2cm;">
-        <a class="navbar-brand" href="#"><h2>Blood Bank</h2></a>
+        <a class="navbar-brand" href="index.html"><h2>Blood Bank Admin</h2></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarContent" aria-controls="navBarContent" 
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -29,43 +28,43 @@
     <div class="collapse navbar-collapse justify-content-center" id="navBarContent">
         <div class="navbar-nav mr-auto" style="list-style: none;">
         
-                <a class="nav-link btn btn-outline-danger text-white" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link btn btn-outline-danger text-white" href="#">Manage Users <span class="sr-only">(current)</span></a>
             
-                <a class="nav-link btn btn-danger m-2 text-white" href="signup.html">Sign Up</a>
-            
-                <a class="nav-link btn btn-danger m-2 text-white" href="send_request.html">Send Request</a>
-            
-                <a class="nav-link btn btn-danger m-2 text-white" href="view_request.html">View Request</a>
-            
-                <a class="nav-link btn btn-danger m-2 text-white" href="search.html">Search</a>
-            
-                <a class="nav-link btn btn-danger m-2 text-white" href="login.html">Log In</a>
-            
+            <a class="nav-link btn btn-danger m-2 text-white" href="blood_donation.html">Blood Donation</a>
+        
+            <a class="nav-link btn btn-danger m-2 text-white" href="manage_requests.html">Manage Blood Requests</a>
+        
+            <a class="nav-link btn btn-danger m-2 text-white" href="index.html">Home</a>
+        
+              
         </div>
     </div>
     </nav>
 </header>
 
-<div class="container" onload="fetchRequests();">
-<table class="table table-striped">
-    <thead class="thead-dark">
-        <tr>
-        <th scope="col">Request Id</th>
-        <th scope="col">Request Date</th>
-        <th scope="col">Units Requested</th>
-        <th scope="col">Blood Group</th>
-        <th scope="col">Request Status</th>
-        </tr>
-    </thead>
-    <tbody id="tbody">
-
-    </tbody>
-</table>
-</div>
-
-
-   <!--Footer-->
-   <footer class="footer">
+<main id="main" class="mt-4">
+    <div class="" onload="fetchUsers();">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">User Id</th>
+                <th scope="col">User Name</th>
+                <th scope="col">User Email</th>
+                <th scope="col">User Phone</th>
+                <th scope="col">Blood Group</th>
+                <th scope="col">User Age</th>
+                <th scope="col">Location</th>
+                <th scope="col"> Action</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+        
+            </tbody>
+        </table>
+        </div>
+</main>
+ <!--Footer-->
+ <footer class="footer" onload="fetchUsers();">
     <div class="row">
         <div class="col-md-4 p-4">
 <h2 class="header">Quick Links</h2>
@@ -105,13 +104,13 @@
 </footer>
 <!--Vendor Scripts-->
 
- <script src ="jquery/jquery.min.js"></script>
- <script src="bootstrap/js/bootstrap.js"></script>
- <script src="aos/aos.js"></script>
- <script src="jquery.easing/jquery.easing.min.js"></script>
+ <script src ="../jquery/jquery.min.js"></script>
+ <script src="../bootstrap/js/bootstrap.js"></script>
+ <script src="../aos/aos.js"></script>
+ <script src="../jquery.easing/jquery.easing.min.js"></script>
 
  <!--Document Scripts-->
- <script src="js/main.js"></script>
+ <script src="js/admin.js"></script>
 
  <script>
     AOS.init({

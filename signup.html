@@ -22,7 +22,7 @@
 </div>
 
 <div class="row card bg-dark text-white">
-<form class="form container mt-4 mb-4" style="border:red 1px solid; border-radius:10px" onsubmit="return isSignUpValid();">
+<form class="form container mt-4 mb-4" method="POST" action="register.php" style="border:red 1px solid; border-radius:10px" onsubmit="return isSignUpValid();">
     <div class="form-row justify-content-center">
         <h2 class="header" style="color:rgb(252, 5, 79);">DONOR REGISTRATION</h2>
     </div>
@@ -70,7 +70,7 @@
 
         <div class="form-group">
             <label for="useremail" class="text-bold"><strong>Email Address</strong></label>
-            <input class="form-control" oninput="validateEmail(this);" aria-describedby="emailHelp" type="email" name="useremail" id="usermail" required>
+            <input class="form-control" oninput="validateEmail(this);" aria-describedby="emailHelp" type="email" name="useremail" id="useremail" required>
             <small id="emailHelp" style="color: red;" class="form-text form-text-muted"><i class="icofont-info " style="border:solid 1px red;border-radius:100%"></i> Input a valid email address. We will send a verification code</small>
        
         </div>
@@ -89,6 +89,14 @@
      <option>Select County</option>
                 <option>Kisii</option>
                 <option>Kakamega</option>
+                <option>Kisumu</option>
+                <option>Migori</option>
+                <option>Siaya</option>
+                <option>Bungoma</option>
+                <option>Homa Bay</option>
+                <option>Bomet</option>
+                <option>Vihiga</option>
+                <option>Nairobi</option>
             </select>
                 <small id="locHelp" style="color: red;" class="form-text form-text-muted"><i class="icofont-info " style="border:solid 1px red;border-radius:100%"></i> Select your county from the list</small>
         </div>
@@ -105,6 +113,7 @@
         <div class="row">
             <div class="col-md-4 p-4">
 <h2 class="header">Quick Links</h2>
+
 <ul style="list-style:none;">
     <li ><a href="#"><span class="icofont-user icofont-2x" style="color: red;"></span>Sign Up</a></li>
     <li ><a href="login.html"><span class="icofont-sign-in icofont-2x" style="color: red;"></span>Log In</a></li>
